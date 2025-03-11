@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route, Navigate } from "react-router";
+import Layout from "./layout/Layout.jsx";
+import { headerMenu } from "./router/Router.jsx";
+import Menu from "./pages/menu/Menu.jsx";
+import Cart from "./pages/Cart/Cart.jsx";
+import Login from "./pages/Login/Login.jsx";
+import Register from "./pages/Register/Register.jsx";
+import Phones from "./pages/Phones/Phones.jsx";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    return (
+        <div>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Navigate to={headerMenu[0].path} />} />
+                    {headerMenu.map((item) => (
+                        <Route key={item.name} path={item.path} element={item.element} />
+                    ))}
+                    <Route path="/menu" element={<Menu />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="*" element={
+                        <div className="container max-w-[1290px] mx-auto text-[25px] font-bold pl-[20px]">
+                            Ошибка: Страница не найдена
+                            <Navigate to="/home" replace />
+                            <a href="/home" className="underline text-[blue] ml-[15px]">Главная</a>
+                            <img className={'pr-[40px]'} src='' alt="Error"/>
+                        </div>
+                    } />
+                    <Route path={'/login'} element={<Login />} />
+                    <Route path={'/register'} element={<Register />} />
+                    <Route path={'/phones'} element={<Phones />} />
+                </Route>
+            </Routes>
+        </div>
+    );
+};
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+export default App;
