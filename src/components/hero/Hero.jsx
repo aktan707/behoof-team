@@ -4,7 +4,7 @@ import ArrowIcon from '../../assets/arrow.svg'
 
 const Hero = () => {
     return (
-      <div className="app-container flex flex-col md:flex-row gap-6 md:gap-[30px] pt-[40px] pb-[120px]">
+      <div className="container flex flex-col md:flex-row gap-6 md:gap-[30px] pt-[40px] pb-[120px]">
         <div className="bg-[#F2F5F9] p-6 md:p-[40px] font-[800] rounded-[16px] w-full md:w-[900px]">
           <h2 className="text-[20px] md:text-[48px] mb-4 md:mb-[32px]">
             Купить товаров в магазинах найди,

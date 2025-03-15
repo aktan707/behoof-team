@@ -1,17 +1,15 @@
-// import logo from '../../assets/logo.png';
-// import vk1 from '../../assets/vk1.svg';
-// import vk2 from '../../assets/vk2.svg';
-// import vk3 from '../../assets/vk3.svg';
-// import vk4 from '../../assets/vk4.svg';
-// import vk5 from '../../assets/vk5.svg';
+import logo from '../../assets/logo.svg';
+import vk1 from '../../assets/vk1.svg';
+import vk2 from '../../assets/vk2.svg';
+import vk3 from '../../assets/vk3.svg';
+import vk4 from '../../assets/vk4.svg';
+import vk5 from '../../assets/vk5.svg';
 
 import {NavLink} from "react-router";
-import logo from "../../assets/logo.svg";
 
 const Footer = () => {
     return (
-        <div className={'container'
-        }>
+        <div className={'container'}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
                     <div className="space-y-4 sm:space-y-6">
@@ -139,7 +137,7 @@ const Footer = () => {
 
                 <div className="mt-8 sm:mt-12 pt-8 border-t border-gray-200">
                     <p className="text-gray-600 text-xs sm:text-sm text-center sm:text-left">
-                        Copyright © 2023 Behoof, Inc. Все права защищены
+                        Copyright © 2025 Behoof, Inc. Все права защищены
                     </p>
                 </div>
             </div>

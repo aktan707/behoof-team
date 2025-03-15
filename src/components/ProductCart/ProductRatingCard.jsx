@@ -20,7 +20,7 @@ const ProductRatingCard = () => {
   };
 
   return (
-    <div className={" app-container mt-[32px] border border-[red] "}>
+    <div className={"container mt-[32px] border border-[red] "}>
       <div className=" flex gap-2 flex-wrap mb-[20px]">
         {filters.map((filter) => (
           <button

@@ -15,7 +15,7 @@ const categories = [
 
 const BestChoose = () => {
   return (
-    <div className="app-container">
+    <div className="container">
       <h3 className="mb-[20px] text-[24px] font-bold">Лучший выбор</h3>
       <div className="overflow-x-auto pb-4 md:overflow-hidden">
         <div className="flex gap-[18px] w-max">

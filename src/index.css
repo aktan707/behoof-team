@@ -5,16 +5,10 @@
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    /*border: 1px solid red;*/
-}
-
-body , button {
-    font-family: "Inter", sans-serif;
-}
-
-.app-container {
     max-width: 1440px;
     width: 100%;
-    margin: 0 auto;
-    border: 1px solid black;
+}
+
+body, button {
+    font-family: "Inter", sans-serif;
 }
