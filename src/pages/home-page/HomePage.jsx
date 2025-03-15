@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+// import {catalogApi} from "../../api/productsApi.js";
 
 const HomePage = () => {
+
+
+
     return (
         <div className={'h-[400px]'}>
-            home
+
         </div>
     );
 };
