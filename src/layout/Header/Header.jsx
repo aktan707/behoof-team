@@ -48,7 +48,7 @@ const Header = () => {
 
         {/* Логотип и слоган */}
         <div className='flex items-center gap-2'>
-          <NavLink to='/'>
+          <NavLink to='/home'>
             <h1 className='text-2xl font-bold flex items-center gap-1'>
               <img className='mr-[5px]' width={25} src={logo} alt="Logo" />
               <span className='text-red-500'>Behoof</span>
