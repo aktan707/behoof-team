@@ -4,14 +4,14 @@ import kom2  from "../../assets/kom2.png"
 import kom3  from "../../assets/kom3.png"
 import kom4  from "../../assets/kom4.png"
 import girl  from "../../assets/girl.svg"
+import  strel2 from "../../assets/strel.svg"
 import './Info.css';
-
+import RatingBlock from "../RatingBlock/RatingBlock.jsx";
 
 function Info() {
     const [activeColorIndex, setActiveColorIndex] = useState(2);
     const [activeMemory, setActiveMemory] = useState('256 ГБ');
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [showFullSpecs, setShowFullSpecs] = useState(false);
 
     const colors = [
         { name: 'Золотой', hex: '#F9E5C9' },
@@ -22,6 +22,7 @@ function Info() {
         { name: 'Розовый', hex: '#F8C8E0' }
     ];
 
+    const [showFullSpecs, setShowFullSpecs] = useState(false);
 
     const reviews = [
         {
@@ -126,6 +127,8 @@ function Info() {
 
                         <div className="product-info">
                             <h2 className="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h2>
+                            <RatingBlock/>
+                            <br/>
 
                             <div className="flex flex-col space-y-3 p-4 bg-white rounded-lg shadow">
                                 {["Дизайн", "Батарея", "Дисплей", "Камера", "Ответ", "Портативность"].map((label, index) => (
@@ -183,34 +186,88 @@ function Info() {
                             </div>
                         </div>
                     </div>
-
-                    <section className="product-specs">
-                        <h3>Характеристики Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-                        <div className="specs-list">
-                            {specs.map((spec, index) => (
-                                <div key={index} className="spec-item">
-                                    <span className="spec-name">{spec.name}</span>
-                                    <span className="spec-value">{spec.value}</span>
-                                </div>
-                            ))}
-                        </div>
-
-                        <button
-                            className="specs-toggle"
-                            onClick={() => setShowFullSpecs(!showFullSpecs)}
-                        >
-                            Полный список характеристик <span className="arrow-down">{showFullSpecs ? '▲' : '▼'}</span>
-                        </button>
-                    </section>
-
-                    <section className="product-description">
-                        <h3>Описание</h3>
-                        <p>Смартфон Apple iPhone 13 выполнен в компактном корпусе с привлекательной отделкой корпуса под
-                            и увеличенной диагональю по сравнению с iPB. Мощный чип A15 Bionic обеспечивает быструю и
-                            стабильную работу при запуске приложений, просмотре видео, веб-серфинге и выполнении других
-                            задач...</p>
-                    </section>
                 </div>
+
+
+
+            <div
+                    className="max-w-[600px] w-full ml-3 mx-auto p-4 border border-gray-300 rounded-lg bg-white shadow-md mt-[150px] max-lg:mt-[140px]"
+                >
+                    <h3>Характеристики Apple iPhone 13 Pro Max 256 ГБ серый</h3>
+                    <div className="specs-list ">
+                        {specs.map((spec, index) => (
+                            <div key={index} className="spec-item rounded-[10px] mt-4 ">
+                                <span className="spec-name">{spec.name}</span>
+                                <span className="spec-value">{spec.value}</span>
+                            </div>
+                        ))}
+                    </div>
+
+
+                    <button
+                        className="mt-4 w-full py-2 text-[red] font-semibold rounded-md transition flex ml-2 items-center"
+                        onClick={() => setShowFullSpecs(!showFullSpecs)}
+                    >
+                        {showFullSpecs ? "Свернуть" : "Полный список характеристик"}
+                        <span className="ml-2">
+       <img
+           src={strel2}
+           alt="Стрелка"
+           className={`w-4 h-4 transition-transform duration-300 ${showFullSpecs ? "rotate-180" : ""}`}/>
+     </span>
+
+                    </button>
+
+
+                    {showFullSpecs && (
+                        <div className="mt-4 p-4 bg-gray-50 rounded-md">
+                            <h4 className="text-md font-semibold mb-2">Заводские данные</h4>
+                            <div className="grid gap-2">
+                                <div className="flex justify-between bg-gray-100 p-2 rounded-md">
+                                    <span className="font-medium">Тип:</span> <span>смартфон</span>
+                                </div>
+                                <div className="flex justify-between bg-gray-100 p-2 rounded-md">
+                                    <span className="font-medium">Модель:</span> <span>Apple iPhone 13</span>
+                                </div>
+                                <div className="flex justify-between bg-gray-100 p-2 rounded-md">
+                                    <span className="font-medium">Год релиза:</span> <span>2021</span>
+                                </div>
+                            </div>
+
+                            <h4 className="text-md font-semibold mt-4 mb-2">Экран</h4>
+                            <div className="grid gap-2">
+                                <div className="flex justify-between bg-gray-100 p-2 rounded-md">
+                                    <span className="font-medium">Диагональ экрана:</span> <span>6.1”</span>
+                                </div>
+                                <div className="flex justify-between bg-gray-100 p-2 rounded-md">
+                                    <span className="font-medium">Разрешение экрана:</span> <span>2532×1170</span>
+                                </div>
+                                <div className="flex justify-between bg-gray-100 p-2 rounded-md">
+                                    <span className="font-medium">Плотность пикселей:</span> <span>457 ppi</span>
+                                </div>
+                                <div className="flex justify-between bg-gray-100 p-2 rounded-md">
+                                    <span className="font-medium">Технология экрана:</span> <span>OLED</span>
+                                </div>
+                                <div className="flex justify-between bg-gray-100 p-2 rounded-md">
+                                    <span className="font-medium">Количество цветов:</span> <span>16.7 млн</span>
+                                </div>
+                                <div className="flex justify-between bg-gray-100 p-2 rounded-md">
+                                    <span className="font-medium">Конструкция:</span>
+                                    <span>безрамочный, вырез на экране</span>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+
+                <section className="product-description">
+                    <h3>Описание</h3>
+                    <p>Смартфон Apple iPhone 13 выполнен в компактном корпусе с привлекательной отделкой корпуса под
+                        и увеличенной диагональю по сравнению с iPB. Мощный чип A15 Bionic обеспечивает быструю и
+                        стабильную работу при запуске приложений, просмотре видео, веб-серфинге и выполнении других
+                        задач...</p>
+                </section>
             </div>
 
 
@@ -280,9 +337,9 @@ function Info() {
                     <button className="px-4 py-2 bg-red-500 text-white rounded-lg">Показать еще</button>
                 </div>
             </div>
-
         </div>
     );
 }
 
 export default Info;
+

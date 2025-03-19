@@ -9,14 +9,13 @@ import {
 } from 'react-icons/ai';
 import { NavLink } from 'react-router';
 import logo from '../../assets/logo.svg';
-const Header = () => {
-    // const [nav, setNav] = useState(false);
-    const [dropdown, setDropdown] = useState(false);
+import { Link } from "react-router";
 
+const Header = () => {
+  const [dropdown, setDropdown] = useState(false);
     return (
         <header className='w-full bg-white shadow-md relative'>
             <div className='container mx-auto flex items-center justify-between py-3 px-4'>
-                {/* Логотип и слоган */}
                 <div className='flex items-center gap-2'>
                     <NavLink to='/'>
                         <h1 className='text-2xl font-bold flex items-center gap-1'>
@@ -26,9 +25,7 @@ const Header = () => {
                     </NavLink>
                     <span className='text-sm text-gray-500 hidden sm:block ml-[5px]'>Лучшие цены <br/> в интернет-магазинах</span>
                 </div>
-
-                {/* Каталог товаров */}
-                <div className='relative'>
+               <div className='relative'>
                     <button
                         className='bg-red-500 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-red-600 transition-all'
                         onClick={() => setDropdown(!dropdown)}
@@ -48,9 +45,8 @@ const Header = () => {
                     )}
                 </div>
 
-                {/* Поиск */}
                 <div className='flex items-center bg-gray-100 rounded-full px-4 py-2 w-64 sm:w-96'>
-                    <AiOutlineSearch className='text-gray-500' size={20} />
+                    <AiOutlineSearch className='text-gray-500' size={20}/>
                     <input
                         type='text'
                         placeholder='Поиск товаров'
@@ -58,11 +54,12 @@ const Header = () => {
                     />
                 </div>
 
-                {/* Иконки */}
-                <div className='flex items-center gap-4'>
-                    <AiOutlineHeart className='text-gray-600 cursor-pointer' size={24} />
-                    <AiOutlineUser className='text-gray-600 cursor-pointer' size={24} />
-                    <AiOutlineShoppingCart className='text-gray-600 cursor-pointer' size={24} />
+                <div className="flex items-center gap-4">
+                    <Link to="/like">
+                        <AiOutlineHeart className="text-gray-600 cursor-pointer" size={24}/>
+                    </Link>
+                    <AiOutlineUser className="text-gray-600 cursor-pointer" size={24}/>
+                    <AiOutlineShoppingCart className="text-gray-600 cursor-pointer" size={24}/>
                 </div>
             </div>
         </header>

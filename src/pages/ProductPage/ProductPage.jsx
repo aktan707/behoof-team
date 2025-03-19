@@ -2,10 +2,11 @@ import { Star, Heart, BarChart2, Check, X, ChevronRight, ChevronDown } from 'luc
 import './ProductPage.css';
 import React from "react";
 import {Link}  from 'react-router';
+import Dropdown from "../Dropdown/Dropdown.jsx";
 
 const Graf2 = () => {
     return (
-        <div className="max-w-7xl mx-auto p-4 sm:p-6   bg-gray-100">
+        <div className="max-w-7xl mx-auto p-4 sm:p-6   bg-gray-100 border border-gray-200 rounded-2xl">
             <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
                 <a href="/" className="hover:text-gray-700 transition-colors">Главная</a>
                 <ChevronRight className="w-4 h-4" />
@@ -151,8 +152,8 @@ const Graf2 = () => {
 
 function ProductCard() {
     return (
-        <div className={"bg-gray "}>
-            <div className="prod transition-transform    bg-white  transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out ">
+        <div className={"bg-gray rounded-2xl "}>
+            <div className="prod transition-transform  rounded-2xl border border-gray   bg-white  transform hover:scale-105 hover:shadow-xl duration-300 ease-in-out ">
                 <div
                     className="flex flex-col lg:flex-row items-start gap-6 p-6  rounded-xl shadow-md hover:shadow-2xl transition-all duration-300">
                     <div className="w-full lg:w-48 mb-6 lg:mb-0 rounded-lg overflow-hidden">
@@ -255,6 +256,9 @@ function ProductPage() {
             <div className="max-w-7xl mx-auto py-12">
                 <div>
                     <Graf2/>
+                    <br/>
+                    <Dropdown/>
+                    <br/>
                 </div>
                 <div className="space-y-6">
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((_, i) => (
@@ -270,4 +274,3 @@ function ProductPage() {
 }
 
 export default ProductPage;
-

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const NotFound = () => {
+const LikePage = () => {
     return (
         <div>
-404
+            hjkl
         </div>
     );
 };
 
-export default NotFound;
+export default LikePage;
